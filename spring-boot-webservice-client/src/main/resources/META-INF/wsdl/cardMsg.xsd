@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://webservice.jmbmn.com/entity/ws/types" 
+	xmlns:tns="http://webservice.jmbmn.com/entity/ws/types" 
+	elementFormDefault="qualified">
+	
+	<xsd:include schemaLocation="cardType.xsd"></xsd:include>
+	<xsd:element name="GetUserCardsRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="id" type="xsd:int" minOccurs="0" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="GetUserCardsResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="listCard" type="tns:ListCardType" minOccurs="0" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="ListCardType">
+		<xsd:sequence>
+			<xsd:element name="card" type="tns:CardType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+</xsd:schema>
